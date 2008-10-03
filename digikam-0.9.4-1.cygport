@@ -3,3 +3,6 @@ inherit kde3
 DESCRIPTION="KDE photo management application"
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+PATCH_URI="0.9.3-transupp.patch"
+
+CYGCONF_ARGS="--without-included-sqlite3"

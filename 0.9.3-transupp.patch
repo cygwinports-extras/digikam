@@ -1,0 +1,14 @@
+--- origsrc/digikam-0.9.3/digikam/libs/jpegutils/transupp.cpp	2007-12-22 11:19:47.000000000 -0600
++++ src/digikam-0.9.3/digikam/libs/jpegutils/transupp.cpp	2008-01-14 20:25:54.125000000 -0600
+@@ -29,6 +29,11 @@
+ }
+ #include "transupp.h"		/* My own external interface */
+ 
++#ifdef __CYGWIN__
++#define height_in_blocks height_in_data_units
++#define width_in_blocks width_in_data_units
++#endif
++
+ namespace Digikam
+ {
+ 
