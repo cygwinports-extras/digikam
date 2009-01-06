@@ -1,0 +1,8 @@
+category: Graphics KDE
+requires: cygwin digikam kdelibs-devel libgphoto2-devel libjasper-devel libjpeg-devel libkdcraw-devel libkexiv2-devel libkipi-devel liblcms-devel libpng12-devel libqt3-devel libsqlite3-devel libtiff-devel libX11-devel
+external-source: digikam
+sdesc: "KDE photo management application (plugin development files)"
+ldesc: "digiKam is an advanced digital photo management application for 
+KDE, which makes importing and organizing digital photos a 'snap'. The 
+photos are organized in albums which can be sorted chronologically, by 
+folder layout or by custom collections."

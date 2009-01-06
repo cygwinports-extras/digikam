@@ -7,27 +7,27 @@ layout or by custom collections.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  kdelibs4-3.5.9-1
-  kipi-plugins-0.1.6_beta1-1
-  libgphoto2-2.4.2-1
-  libjasper1-1.900.1-2
+  kdelibs4-3.5.10-1
+  kipi-plugins-0.1.7-1
+  libgphoto2-2.4.3-1
+  libjasper1-1.900.1-3
   libjpeg62-6b-12
-  libkdcraw4-0.1.5-1
-  libkexiv2_3-0.1.7-2
-  libkipi-0.1.6-1
+  libkdcraw4-0.1.7-1
+  libkexiv2_5-0.1.8-1
+  libkipi0-0.1.6-2
   liblcms1-1.17-1
-  libpng12-1.2.32-1
-  libsqlite3_0-3.6.3-1
+  libpng12-1.2.34-1
+  libqt3-3.3.8b-1
+  libsqlite3_0-3.6.7-1
   libtiff5-3.8.2-3
-  libX11_6-1.1.3-1
-  qt3-3.3.8-4
+  libX11_6-1.1.5-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.63-1
-  automake1.10-1.10.1-1
+  automake1.10-1.10.1-2
   binutils-20080624-2
-  cygport-0.4.0-1
+  cygport-0.4.4-1
   gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
@@ -46,84 +46,28 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack digikam-0.9.4-X-src.tar.bz2
+  unpack digikam-0.9.5_beta2-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./digikam-0.9.4-X.cygport all
+  cygport ./digikam-0.9.5_beta2-X.cygport all
 
 This will create:
-  /usr/src/digikam-0.9.4-X-src.tar.bz2
-  /usr/src/digikam-0.9.4-X.tar.bz2
+  /usr/src/digikam-0.9.5_beta2-X-src.tar.bz2
+  /usr/src/digikam-0.9.5_beta2-X.tar.bz2
+  /usr/src/digikam-devel-0.9.5_beta2-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
+Files included in the binary packages:
 
+(digikam)
   /etc/postinstall/digikam.sh
   /usr/bin/cygdigikam-0.dll
   /usr/bin/digikam.exe
   /usr/bin/digikamthemedesigner.exe
   /usr/bin/digitaglinktree
   /usr/bin/showfoto.exe
-  /usr/include/kde/digikam/bcgmodifier.h
-  /usr/include/kde/digikam/cietonguewidget.h
-  /usr/include/kde/digikam/colorgradientwidget.h
-  /usr/include/kde/digikam/colormodifier.h
-  /usr/include/kde/digikam/ctrlpaneldlg.h
-  /usr/include/kde/digikam/curveswidget.h
-  /usr/include/kde/digikam/dcolor.h
-  /usr/include/kde/digikam/dcolorblend.h
-  /usr/include/kde/digikam/dcolorcomposer.h
-  /usr/include/kde/digikam/dcolorpixelaccess.h
-  /usr/include/kde/digikam/dcursortracker.h
-  /usr/include/kde/digikam/ddebug.h
-  /usr/include/kde/digikam/dimg.h
-  /usr/include/kde/digikam/dimggaussianblur.h
-  /usr/include/kde/digikam/dimgimagefilters.h
-  /usr/include/kde/digikam/dimgsharpen.h
-  /usr/include/kde/digikam/dimgthreadedfilter.h
-  /usr/include/kde/digikam/dlogoaction.h
-  /usr/include/kde/digikam/dmetadata.h
-  /usr/include/kde/digikam/dpopupmenu.h
-  /usr/include/kde/digikam/dprogressdlg.h
-  /usr/include/kde/digikam/greycstorationiface.h
-  /usr/include/kde/digikam/greycstorationsettings.h
-  /usr/include/kde/digikam/greycstorationwidget.h
-  /usr/include/kde/digikam/histogramwidget.h
-  /usr/include/kde/digikam/hslmodifier.h
-  /usr/include/kde/digikam/iccpreviewwidget.h
-  /usr/include/kde/digikam/iccprofileinfodlg.h
-  /usr/include/kde/digikam/iccprofilewidget.h
-  /usr/include/kde/digikam/icctransform.h
-  /usr/include/kde/digikam/imagecurves.h
-  /usr/include/kde/digikam/imagedialog.h
-  /usr/include/kde/digikam/imagedlgbase.h
-  /usr/include/kde/digikam/imageguidedlg.h
-  /usr/include/kde/digikam/imageguidewidget.h
-  /usr/include/kde/digikam/imagehistogram.h
-  /usr/include/kde/digikam/imageiface.h
-  /usr/include/kde/digikam/imagelevels.h
-  /usr/include/kde/digikam/imagepaniconwidget.h
-  /usr/include/kde/digikam/imagepannelwidget.h
-  /usr/include/kde/digikam/imageplugin.h
-  /usr/include/kde/digikam/imageregionwidget.h
-  /usr/include/kde/digikam/imagewidget.h
-  /usr/include/kde/digikam/listboxpreviewitem.h
-  /usr/include/kde/digikam/paniconwidget.h
-  /usr/include/kde/digikam/photoinfocontainer.h
-  /usr/include/kde/digikam/previewwidget.h
-  /usr/include/kde/digikam/rawcameradlg.h
-  /usr/include/kde/digikam/searchtextbar.h
-  /usr/include/kde/digikam/sidebar.h
-  /usr/include/kde/digikam/squeezedcombobox.h
-  /usr/include/kde/digikam/statusled.h
-  /usr/include/kde/digikam/statusnavigatebar.h
-  /usr/include/kde/digikam/statusprogressbar.h
-  /usr/include/kde/digikam/statuszoombar.h
-  /usr/include/kde/digikam/thumbbar.h
-  /usr/include/kde/digikam/whitebalance.h
-  /usr/include/kde/digikam_export.h
   /usr/lib/kde3/digikamimageplugin_adjustcurves.dll
   /usr/lib/kde3/digikamimageplugin_adjustcurves.la
   /usr/lib/kde3/digikamimageplugin_adjustlevels.dll
@@ -188,8 +132,6 @@ Files included in the binary package:
   /usr/lib/kde3/kio_digikamtags.la
   /usr/lib/kde3/kio_digikamthumbnail.dll
   /usr/lib/kde3/kio_digikamthumbnail.la
-  /usr/lib/libdigikam.dll.a
-  /usr/lib/libdigikam.la
   /usr/share/applications/kde/digikam.desktop
   /usr/share/applications/kde/showfoto.desktop
   /usr/share/apps/digikam/about/bar-bottom-left.png
@@ -752,326 +694,14 @@ Files included in the binary package:
   /usr/share/apps/showfoto/menusidepixmap.png
   /usr/share/apps/showfoto/showfoto-splash.png
   /usr/share/apps/showfoto/showfotoui.rc
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam.tag
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/album_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/album_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/album_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb__sqlite2_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumdb__sqlite2_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumfiletip_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumfiletip_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumfolderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumfolderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumhistory_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumhistory_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumhistory_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumicongroupitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumicongroupitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconviewfilter_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumiconviewfilter_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albuminfo_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albuminfo_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumitemhandler_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumitemhandler_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumlister_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumlister_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumlister_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albummanager_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albummanager_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albummanager_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumpropsedit_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumpropsedit_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumsettings_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumsettings_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumthumbnailloader_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumthumbnailloader_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumwidgetstack_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/albumwidgetstack_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/annotated.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/cameralist_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/cameralist_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/cameratype_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/cameratype_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1Album-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1Album.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1Album.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDB-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDB.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDB__Sqlite2-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDB__Sqlite2.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDrag-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumDrag.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumHistory-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumHistory.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumInfo-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumInfo.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumItemHandler-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumItemHandler.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumIterator-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumIterator.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumLister-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumLister.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumManager-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1AlbumManager.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1CameraDragObject-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1CameraDragObject.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1CameraItemListDrag-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1CameraItemListDrag.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DAlbum-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DAlbum.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DAlbum.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DCOPIface-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DCOPIface.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamImageCollection-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamImageCollection.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamImageInfo-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamImageInfo.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamKipiInterface-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1DigikamKipiInterface.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1FolderView-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1FolderView.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ImageInfo-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ImageInfo.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ItemDrag-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ItemDrag.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDateEdit-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDateEdit.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDatePickerPopup-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDatePickerPopup.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDateTimeEdit-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1KDateTimeEdit.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1MetadataHub_1_1TagStatus-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1MetadataHub_1_1TagStatus.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1PAlbum-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1PAlbum.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1PAlbum.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1PixmapManager-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1PixmapManager.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SAlbum-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SAlbum.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SAlbum.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ScanLib-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1ScanLib.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedBase-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedBase.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedBase.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedDialog-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedDialog.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedGroup-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedGroup.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedGroup.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedRule-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedRule.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchAdvancedRule.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchInfo-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchInfo.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchQuickDialog-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchQuickDialog.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchRuleLabel-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1SearchRuleLabel.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TAlbum-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TAlbum.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TAlbum.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagDrag-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagDrag.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagInfo-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagInfo.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagListDrag-members.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classDigikam_1_1TagListDrag.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/classes.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/constants_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/datefolderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/datefolderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dcopiface_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dcopiface_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikam__export_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamapp_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamapp_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamappprivate_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamfirstrun_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamfirstrun_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/digikamview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dio_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dio_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/doxygen.css
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/doxygen.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dragobjects_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/dragobjects_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/files.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/firstrun_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/firstrun_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/folderitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/folderitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/folderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/folderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x63.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x64.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x65.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x66.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x67.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x68.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x69.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x6b.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x6c.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x6d.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x6e.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x6f.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x70.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x72.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x73.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x74.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x75.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x77.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_0x7e.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_enum.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_eval.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x63.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x64.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x65.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x66.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x67.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x68.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x69.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x6b.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x6c.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x6d.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x6e.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x6f.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x70.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x72.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x73.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x74.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x75.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x77.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/functions_func_0x7e.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/hierarchy.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/icongroupitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/icongroupitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/iconitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/iconitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/iconview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/iconview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageattributeswatch_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageattributeswatch_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageinfo_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageinfo_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageinfo_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imageinfo_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imagepreviewview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/imagepreviewview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/index.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdateedit_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdateedit_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdatepickerpopup_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdatepickerpopup_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdatetimeedit_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdatetimeedit_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kdatetimeedit_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kipiinterface_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/kipiinterface_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/main_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/mediaplayerview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/mediaplayerview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/metadatahub_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/metadatahub_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/mimefilter_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/mimefilter_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/monthwidget_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/monthwidget_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/pixmapmanager_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/pixmapmanager_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/pixmapmanager_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/pixmapmanager_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingfilter_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingfilter_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingpopupmenu_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingpopupmenu_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingwidget_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/ratingwidget_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/scanlib_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/scanlib_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/scanlib_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/scanlib_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchadvanceddialog_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchadvanceddialog_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchadvanceddialog_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchadvanceddialog_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchfolderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchfolderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchquickdialog_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchquickdialog_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchquickdialog_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchquickdialog_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchresultsitem_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchresultsitem_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchresultsview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchresultsview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchwidgets_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchwidgets_8cpp.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchwidgets_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/searchwidgets_8h.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/syncjob_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/syncjob_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tab_b.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tab_l.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tab_r.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tabs.css
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tageditdlg_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tageditdlg_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagfilterview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagfilterview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagfolderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagfolderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagspopupmenu_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/tagspopupmenu_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/thumbnailsize_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelinefolderview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelinefolderview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelineview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelineview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelinewidget_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/timelinewidget_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/upgradedb__sqlite2tosqlite3_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/upgradedb__sqlite2tosqlite3_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/version_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/welcomepageview_8cpp-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/digikam/html/welcomepageview_8h-source.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/doxygen.css
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/doxygen.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/index.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/tab_b.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/tab_l.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/tab_r.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/digikam/html/tabs.css
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/doxygen.css
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/doxygen.png
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/favicon.ico
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/index.html
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/installdox-slow
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/subdirs
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/tab_b.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/tab_l.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/tab_r.gif
-  /usr/share/doc/HTML/en/digikam-0.9.4-apidocs/tabs.css
-  /usr/share/doc/digikam-0.9.4/AUTHORS
-  /usr/share/doc/digikam-0.9.4/COPYING
-  /usr/share/doc/digikam-0.9.4/ChangeLog
-  /usr/share/doc/digikam-0.9.4/HACKING
-  /usr/share/doc/digikam-0.9.4/INSTALL
-  /usr/share/doc/digikam-0.9.4/NEWS
-  /usr/share/doc/digikam-0.9.4/README
-  /usr/share/doc/digikam-0.9.4/TODO
+  /usr/share/doc/digikam-0.9.5_beta2/AUTHORS
+  /usr/share/doc/digikam-0.9.5_beta2/COPYING
+  /usr/share/doc/digikam-0.9.5_beta2/ChangeLog
+  /usr/share/doc/digikam-0.9.5_beta2/HACKING
+  /usr/share/doc/digikam-0.9.5_beta2/INSTALL
+  /usr/share/doc/digikam-0.9.5_beta2/NEWS
+  /usr/share/doc/digikam-0.9.5_beta2/README
+  /usr/share/doc/digikam-0.9.5_beta2/TODO
   /usr/share/icons/hicolor/128x128/apps/digikam.png
   /usr/share/icons/hicolor/128x128/apps/showfoto.png
   /usr/share/icons/hicolor/16x16/apps/digikam.png
@@ -1168,9 +798,71 @@ Files included in the binary package:
   /usr/share/services/digikamthumbnail.protocol
   /usr/share/servicetypes/digikamimageplugin.desktop
 
+(digikam-devel)
+  /usr/include/kde/digikam/bcgmodifier.h
+  /usr/include/kde/digikam/cietonguewidget.h
+  /usr/include/kde/digikam/colorgradientwidget.h
+  /usr/include/kde/digikam/colormodifier.h
+  /usr/include/kde/digikam/curveswidget.h
+  /usr/include/kde/digikam/dcolor.h
+  /usr/include/kde/digikam/dcolorblend.h
+  /usr/include/kde/digikam/dcolorcomposer.h
+  /usr/include/kde/digikam/dcolorpixelaccess.h
+  /usr/include/kde/digikam/dcursortracker.h
+  /usr/include/kde/digikam/ddebug.h
+  /usr/include/kde/digikam/dimg.h
+  /usr/include/kde/digikam/dimggaussianblur.h
+  /usr/include/kde/digikam/dimgimagefilters.h
+  /usr/include/kde/digikam/dimgsharpen.h
+  /usr/include/kde/digikam/dimgthreadedfilter.h
+  /usr/include/kde/digikam/dlogoaction.h
+  /usr/include/kde/digikam/dmetadata.h
+  /usr/include/kde/digikam/dpopupmenu.h
+  /usr/include/kde/digikam/dprogressdlg.h
+  /usr/include/kde/digikam/greycstorationiface.h
+  /usr/include/kde/digikam/greycstorationsettings.h
+  /usr/include/kde/digikam/greycstorationwidget.h
+  /usr/include/kde/digikam/histogramwidget.h
+  /usr/include/kde/digikam/hslmodifier.h
+  /usr/include/kde/digikam/iccpreviewwidget.h
+  /usr/include/kde/digikam/iccprofileinfodlg.h
+  /usr/include/kde/digikam/iccprofilewidget.h
+  /usr/include/kde/digikam/icctransform.h
+  /usr/include/kde/digikam/imagecurves.h
+  /usr/include/kde/digikam/imagedialog.h
+  /usr/include/kde/digikam/imageguidewidget.h
+  /usr/include/kde/digikam/imagehistogram.h
+  /usr/include/kde/digikam/imageiface.h
+  /usr/include/kde/digikam/imagelevels.h
+  /usr/include/kde/digikam/imagepanelwidget.h
+  /usr/include/kde/digikam/imagepaniconwidget.h
+  /usr/include/kde/digikam/imageplugin.h
+  /usr/include/kde/digikam/imageregionwidget.h
+  /usr/include/kde/digikam/imagewidget.h
+  /usr/include/kde/digikam/listboxpreviewitem.h
+  /usr/include/kde/digikam/paniconwidget.h
+  /usr/include/kde/digikam/photoinfocontainer.h
+  /usr/include/kde/digikam/previewwidget.h
+  /usr/include/kde/digikam/rawcameradlg.h
+  /usr/include/kde/digikam/searchtextbar.h
+  /usr/include/kde/digikam/sidebar.h
+  /usr/include/kde/digikam/squeezedcombobox.h
+  /usr/include/kde/digikam/statusled.h
+  /usr/include/kde/digikam/statusnavigatebar.h
+  /usr/include/kde/digikam/statusprogressbar.h
+  /usr/include/kde/digikam/statuszoombar.h
+  /usr/include/kde/digikam/thumbbar.h
+  /usr/include/kde/digikam/whitebalance.h
+  /usr/include/kde/digikam_export.h
+  /usr/lib/libdigikam.dll.a
+  /usr/lib/libdigikam.la
+
 ------------------
 
 Port Notes:
+
+----- version 0.9.5_beta2-1 -----
+Version bump.
 
 ----- version 0.9.4-1 -----
 Version bump.
