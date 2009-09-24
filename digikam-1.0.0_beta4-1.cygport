@@ -1,15 +1,13 @@
-inherit kde3
+inherit kde4
 
 DESCRIPTION="KDE photo management application"
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P/_/-}.tar.bz2"
-PATCH_URI="0.9.3-transupp.patch"
-
 SRC_DIR="${P/_/-}"
+
+PATCH_URI="1.0.0-libpgf-platform.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
-digikam_CONTENTS="etc/ usr/bin/ usr/lib/kde3/ usr/share/"
-digikam_devel_CONTENTS="usr/include/ usr/lib/lib*"
-
-CYGCONF_ARGS="--without-included-sqlite3"
+digikam_CONTENTS="etc/ usr/bin/ usr/lib/kde4/*.* usr/share/"
+digikam_devel_CONTENTS="usr/include/ usr/lib/kde4/lib/"
