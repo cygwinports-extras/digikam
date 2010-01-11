@@ -2,8 +2,7 @@ inherit kde4
 
 DESCRIPTION="KDE photo management application"
 HOMEPAGE="http://www.digikam.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P/_/-}.tar.bz2"
-SRC_DIR="${P/_/-}"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 PATCH_URI="1.0.0-libpgf-platform.patch"
 
