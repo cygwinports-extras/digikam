@@ -1,0 +1,24 @@
+Should this be changed in libpgf.pc Cflags?
+
+--- origsrc/digikam-1.7.0/libs/dimg/loaders/pgfloader.cpp	2010-12-19 04:29:03.000000000 -0600
++++ src/digikam-1.7.0/libs/dimg/loaders/pgfloader.cpp	2011-01-14 06:13:52.699984200 -0600
+@@ -72,7 +72,7 @@ extern "C"
+ 
+ // Local includes
+ 
+-#include "PGFimage.h"
++#include <libpgf/PGFimage.h>
+ #include "dimg.h"
+ #include "dimgloaderobserver.h"
+ 
+--- origsrc/digikam-1.7.0/libs/threadimageio/pgfutils.cpp	2010-12-19 04:29:08.000000000 -0600
++++ src/digikam-1.7.0/libs/threadimageio/pgfutils.cpp	2011-01-14 06:13:59.198153300 -0600
+@@ -45,7 +45,7 @@ extern "C"
+ 
+ // LibPGF includes
+ 
+-#include "PGFimage.h"
++#include <libpgf/PGFimage.h>
+ 
+ namespace Digikam
+ {
