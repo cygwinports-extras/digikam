@@ -1,0 +1,173 @@
+--- origsrc/digikam-1.9.0/CMakeLists.txt	2011-02-27 14:16:18.000000000 -0600
++++ src/digikam-1.9.0/CMakeLists.txt	2011-06-20 19:41:04.640015000 -0500
+@@ -216,11 +216,12 @@ MACRO_BOOL_TO_01(KDEPIMLIBS_FOUND HAVE_K
+ SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH} )
+ 
+ # Check MarbleWidget library for geolocation.
+-MACRO_OPTIONAL_FIND_PACKAGE(MarbleWidget)
+-MACRO_BOOL_TO_01(MARBLEWIDGET_FOUND HAVE_MARBLEWIDGET)
+-IF (MARBLEWIDGET_FOUND)
++MACRO_OPTIONAL_FIND_PACKAGE(Marble)
++MACRO_BOOL_TO_01(MARBLE_FOUND HAVE_MARBLEWIDGET)
++IF (MARBLE_FOUND)
++    SET(MARBLEWIDGET_SUPPORTS_PLUGINS ON)
+     INCLUDE(libs/imageproperties/markerclusterholderplugin/CheckPluginBuildable.cmake)
+-ENDIF (MARBLEWIDGET_FOUND)
++ENDIF (MARBLE_FOUND)
+ 
+ # Check GLib2 library for lrqr-1 and lensfun libraries.
+ MACRO_OPTIONAL_FIND_PACKAGE(GLIB2)
+@@ -333,19 +334,19 @@ ELSE(KDEPIMLIBS_FOUND)
+     MESSAGE(STATUS "")
+ ENDIF(KDEPIMLIBS_FOUND)
+ 
+-IF(MARBLEWIDGET_FOUND)
++IF(MARBLE_FOUND)
+     MESSAGE(STATUS " libmarblewidget library found............ YES (optional)")
+     IF(MARBLEWIDGET_SUPPORTS_PLUGINS)
+       MESSAGE(STATUS " Can build Marble plugin.................. YES (optional)")
+     ELSE(MARBLEWIDGET_SUPPORTS_PLUGINS)
+       MESSAGE(STATUS " Can build Marble plugin.................. NO  (optional)")
+     ENDIF(MARBLEWIDGET_SUPPORTS_PLUGINS)
+-ELSE(MARBLEWIDGET_FOUND)
++ELSE(MARBLE_FOUND)
+     MESSAGE(STATUS " libmarblewidget library found............ NO  (optional)")
+     MESSAGE(STATUS "")
+     MESSAGE(STATUS " digiKam will be compiled without geolocation using Marble widget support.")
+     MESSAGE(STATUS "")
+-ENDIF(MARBLEWIDGET_FOUND)
++ENDIF(MARBLE_FOUND)
+ 
+ IF(NEPOMUK_FOUND)
+     MESSAGE(STATUS " Nepomuk libraries found.................. YES (optional)")
+@@ -497,9 +498,9 @@ IF(DIGIKAM_CAN_BE_COMPILED)
+         INCLUDE_DIRECTORIES(${SOPRANO_INCLUDE_DIR} ${NEPOMUK_INCLUDE_DIR})
+     ENDIF(NEPOMUK_FOUND)
+ 
+-    IF(MARBLEWIDGET_FOUND)
+-        INCLUDE_DIRECTORIES(${LIBMARBLEWIDGET_INCLUDE_DIR})
+-    ENDIF(MARBLEWIDGET_FOUND)
++    IF(MARBLE_FOUND)
++        INCLUDE_DIRECTORIES(${MARBLE_INCLUDE_DIR})
++    ENDIF(MARBLE_FOUND)
+ 
+     IF(PGF_FOUND)
+        INCLUDE_DIRECTORIES(${PGF_INCLUDE_DIRS})
+@@ -771,11 +772,11 @@ IF(DIGIKAM_CAN_BE_COMPILED)
+         ${CMAKE_CURRENT_SOURCE_DIR}/libs/imageproperties/worldmapwidget.cpp
+        )
+ 
+-    IF(MARBLEWIDGET_FOUND)
++    IF(MARBLE_FOUND)
+         SET(libimageproperties_SRCS ${libimageproperties_SRCS}
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/imageproperties/markerclusterholder.cpp
+         )
+-    ENDIF(MARBLEWIDGET_FOUND)
++    ENDIF(MARBLE_FOUND)
+ 
+     # --enable-final triggers: http://bugs.kde.org/show_bug.cgi?id=126326
+     # digikam: camera download: auto-rotated images lose EXIF info ...
+--- origsrc/digikam-1.9.0/digikam/CMakeLists.txt	2011-02-27 12:58:25.000000000 -0600
++++ src/digikam-1.9.0/digikam/CMakeLists.txt	2011-06-20 18:38:36.606569900 -0500
+@@ -92,9 +92,9 @@ IF(PGF_FOUND)
+    TARGET_LINK_LIBRARIES(digikamcore ${PGF_LIBRARIES})
+ ENDIF(PGF_FOUND)
+ 
+-IF(MARBLEWIDGET_FOUND)
+-    TARGET_LINK_LIBRARIES(digikamcore ${LIBMARBLEWIDGET_LIBRARY})
+-ENDIF(MARBLEWIDGET_FOUND)
++IF(MARBLE_FOUND)
++    TARGET_LINK_LIBRARIES(digikamcore ${MARBLE_LIBRARIES})
++ENDIF(MARBLE_FOUND)
+ 
+ IF(CLAPACK_FOUND)
+    TARGET_LINK_LIBRARIES(digikamcore ${CLAPACK_LIBRARY})
+@@ -252,9 +252,9 @@ IF(KDEPIMLIBS_FOUND)
+   TARGET_LINK_LIBRARIES(digikam ${KDE4_KABC_LIBS})
+ ENDIF(KDEPIMLIBS_FOUND)
+ 
+-IF(MARBLEWIDGET_FOUND)
+-  TARGET_LINK_LIBRARIES(digikam ${LIBMARBLEWIDGET_LIBRARY})
+-ENDIF(MARBLEWIDGET_FOUND)
++IF(MARBLE_FOUND)
++  TARGET_LINK_LIBRARIES(digikam ${MARBLE_LIBRARIES})
++ENDIF(MARBLE_FOUND)
+ 
+ IF(CLAPACK_FOUND)
+    TARGET_LINK_LIBRARIES(digikam ${CLAPACK_LIBRARY})
+--- origsrc/digikam-1.9.0/libs/imageproperties/markerclusterholderplugin/CheckPluginBuildable.cmake	2011-02-27 12:58:07.000000000 -0600
++++ src/digikam-1.9.0/libs/imageproperties/markerclusterholderplugin/CheckPluginBuildable.cmake	2011-06-20 19:01:42.904383000 -0500
+@@ -2,14 +2,14 @@
+ # determine whether we can actually build this plugin
+ # there is no variable for the Marble version, so we
+ # just test for the existance of a required header
+-IF(LIBMARBLEWIDGET_INCLUDE_DIR)
+-  # Digikam sets LIBMARBLEWIDGET_INCLUDE_DIR which the /marble, so we need to check both ways:
+-  IF(EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/marble/RenderPlugin.h)
++IF(MARBLE_INCLUDE_DIR)
++  # Digikam sets MARBLE_INCLUDE_DIR which the /marble, so we need to check both ways:
++  IF(EXISTS ${MARBLE_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${MARBLE_INCLUDE_DIR}/marble/RenderPlugin.h)
+     SET(MARBLEWIDGET_SUPPORTS_PLUGINS TRUE)
+     MESSAGE(STATUS "Can build Marble plugin: yes")
+-  ELSE(EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/marble/RenderPlugin.h)
++  ELSE(EXISTS ${MARBLE_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${MARBLE_INCLUDE_DIR}/marble/RenderPlugin.h)
+     SET(MARBLEWIDGET_SUPPORTS_PLUGINS FALSE)
+     MESSAGE(STATUS "Can build Marble plugin: no")
+-  ENDIF(EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${LIBMARBLEWIDGET_INCLUDE_DIR}/marble/RenderPlugin.h)
+-ENDIF(LIBMARBLEWIDGET_INCLUDE_DIR)
++  ENDIF(EXISTS ${MARBLE_INCLUDE_DIR}/RenderPlugin.h OR EXISTS ${MARBLE_INCLUDE_DIR}/marble/RenderPlugin.h)
++ENDIF(MARBLE_INCLUDE_DIR)
+ 
+--- origsrc/digikam-1.9.0/libs/imageproperties/markerclusterholderplugin/MarbleMacros.cmake	2011-02-27 12:58:07.000000000 -0600
++++ src/digikam-1.9.0/libs/imageproperties/markerclusterholderplugin/MarbleMacros.cmake	2011-06-20 19:07:49.313617800 -0500
+@@ -16,7 +16,7 @@ if( QTONLY )
+                                            ${QT_QTNETWORK_LIBRARY}
+                                            ${QT_QTMAIN_LIBRARY}
+                                            ${${_target_name}_LIBS}
+-                                           ${LIBMARBLEWIDGET_LIBRARY} )
++                                           ${MARBLE_LIBRARIES} )
+     install( TARGETS ${_target_name} DESTINATION ${MARBLE_PLUGIN_INSTALL_PATH} )
+ else( QTONLY )
+     kde4_add_plugin( ${_target_name} ${_src} )
+@@ -31,7 +31,7 @@ else( QTONLY )
+                                            ${KDE4_KIO_LIBRARY}
+                                            ${QT_QTMAIN_LIBRARY}
+                                            ${${_target_name}_LIBS}
+-                                           ${LIBMARBLEWIDGET_LIBRARY} )
++                                           ${MARBLE_LIBRARIES} )
+     install( TARGETS ${_target_name} DESTINATION ${MARBLE_PLUGIN_INSTALL_PATH} )
+ endif( QTONLY )
+ 
+@@ -61,7 +61,7 @@ if( QTONLY )
+                                            ${QT_QTNETWORK_LIBRARY}
+                                            ${QT_QTMAIN_LIBRARY}
+                                            ${${_target_name}_LIBS}
+-                                           ${LIBMARBLEWIDGET_LIBRARY} )
++                                           ${MARBLE_LIBRARIES} )
+     install( TARGETS ${_target_name} DESTINATION ${QT_PLUGINS_DIR}/designer )
+ else( QTONLY )
+     kde4_add_plugin( ${_target_name} ${_src} )
+@@ -76,7 +76,7 @@ else( QTONLY )
+                                            ${KDE4_KIO_LIBRARY}
+                                            ${QT_QTMAIN_LIBRARY}
+                                            ${${_target_name}_LIBS}
+-                                           ${LIBMARBLEWIDGET_LIBRARY} )
++                                           ${MARBLE_LIBRARIES} )
+     install( TARGETS ${_target_name} DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/designer )
+ endif( QTONLY )
+ 
+--- origsrc/digikam-1.9.0/themedesigner/CMakeLists.txt	2011-02-27 12:58:23.000000000 -0600
++++ src/digikam-1.9.0/themedesigner/CMakeLists.txt	2011-06-20 18:39:20.707846800 -0500
+@@ -51,9 +51,9 @@ IF(KDEPIMLIBS_FOUND)
+     TARGET_LINK_LIBRARIES(digikamthemedesigner ${KDE4_KABC_LIBS})
+ ENDIF(KDEPIMLIBS_FOUND)
+ 
+-IF(MARBLEWIDGET_FOUND)
+-    TARGET_LINK_LIBRARIES(digikamthemedesigner ${LIBMARBLEWIDGET_LIBRARY})
+-ENDIF(MARBLEWIDGET_FOUND)
++IF(MARBLE_FOUND)
++    TARGET_LINK_LIBRARIES(digikamthemedesigner ${MARBLE_LIBRARIES})
++ENDIF(MARBLE_FOUND)
+ 
+ INSTALL(TARGETS digikamthemedesigner ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

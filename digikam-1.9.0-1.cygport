@@ -3,7 +3,8 @@ inherit kde4
 DESCRIPTION="KDE photo management application"
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
-PATCH_URI="1.7.0-system-libpgf.patch"
+PATCH_URI="1.7.0-system-libpgf.patch
+           1.9.0-marblewidget.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
