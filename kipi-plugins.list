@@ -1,0 +1,15 @@
+usr/bin/cygkipiplugins-2.dll
+usr/bin/dngconverter.exe
+usr/bin/dnginfo.exe
+usr/bin/expoblending.exe
+usr/lib/kde4/kipiplugin_*
+usr/share/applications/kde4/dngconverter.desktop
+usr/share/applications/kde4/expoblending.desktop
+usr/share/applications/kde4/kipiplugins.desktop
+usr/share/doc/HTML/en/kipi-plugins/
+usr/share/icons/hicolor/*/actions/
+usr/share/icons/oxygen/*/apps/*converter.*
+usr/share/kde4/apps/gpssync/
+usr/share/kde4/apps/kipiplugin*
+usr/share/kde4/services/kipiplugin*
+usr/share/locale/*/LC_MESSAGES/kipiplugin*

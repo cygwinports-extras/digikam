@@ -1,0 +1,31 @@
+inherit kde4
+
+DESCRIPTION="KDE photo management application"
+HOMEPAGE="http://www.digikam.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+PATCH_URI="2.0.0-as-needed.patch
+           2.0.0-cygwin.patch"
+
+PKG_NAMES="${PN} kipi-plugins libkface1 libkface-common libkface-devel
+           libkgeomap1 libkgeomap-common libkgeomap-devel
+           libmediawiki1 libmediawiki-devel"
+libkface1_CONTENTS="usr/bin/cygkface-1.dll"
+libkface_common_CONTENTS="usr/share/kde4/apps/libkface/"
+libkface_devel_CONTENTS="usr/include/kde4/libkface/ usr/lib/libkface.dll.a
+                         usr/lib/pkgconfig/libkface.pc
+                         usr/share/kde4/apps/cmake/modules/FindKface.cmake"
+libkgeomap1_CONTENTS="usr/bin/cygkgeomap-1.dll"
+libkgeomap_common_CONTENTS="usr/share/kde4/apps/libkgeomap/"
+libkgeomap_devel_CONTENTS="usr/bin/libkgeomap_demo.exe usr/include/kde4/libkgeomap/
+                           usr/lib/libkgeomap.dll.a usr/lib/pkgconfig/libkgeomap.pc
+                           usr/share/kde4/apps/cmake/modules/FindKGeoMap.cmake"
+libmediawiki1_CONTENTS="usr/bin/cygmediawiki-1.dll"
+libmediawiki_devel_CONTENTS="usr/include/kde4/libmediawiki/ usr/lib/libmediawiki.dll.a
+                             usr/lib/pkgconfig/libmediawiki.pc
+                             usr/share/kde4/apps/cmake/modules/FindMediawiki.cmake"
+# private libraries
+PKG_IGNORE="usr/lib/libdigikam* usr/lib/libkipiplugins.*"
+
+
+CYGCMAKE_ARGS="-DPGF_INCLUDE_DIRS=/usr/include/libpgf"

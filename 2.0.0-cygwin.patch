@@ -1,0 +1,29 @@
+--- origsrc/digikam-2.0.0/core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	2011-07-27 18:28:11.000000000 -0500
++++ src/digikam-2.0.0/core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	2011-08-10 20:40:41.238766900 -0500
+@@ -45,7 +45,7 @@ static bool fillMemoryInfo(Digikam::KMem
+ #include <unistd.h>
+ #include <kstat.h>
+ #endif
+-#if defined(Q_OS_LINUX)// || defined(Q_OS_CYGWIN)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+ #include <stdio.h>
+ #include <string.h>
+ #endif
+@@ -76,7 +76,7 @@ static bool fillMemoryInfo(Digikam::KMem
+ #endif
+ 
+ 
+-#if defined(Q_OS_LINUX)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+ char *sg_f_read_line(FILE *f, const char *string){
+     /* Max line length. 8k should be more than enough */
+     static char line[8192];
+@@ -453,7 +453,7 @@ bool get_swap_stats(Digikam::KMemoryInfo
+     struct anoninfo ai;
+     int pagesize;
+ #endif
+-#if defined(Q_OS_LINUX) //|| defined(Q_OS_CYGWIN)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+     FILE *f;
+     char *line_ptr;
+     unsigned long long value;

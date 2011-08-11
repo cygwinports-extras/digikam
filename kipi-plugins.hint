@@ -1,0 +1,8 @@
+category: Graphics KDE
+requires: libexpat1 libgcc1 libGL1 libgomp1 libjpeg8 libkdcraw20 libkdecore5 libkexiv2_10 libkgeomap1 libkipi8 libkpim4 libopencv2.3 libphonon4 libpng14 libqca2 libqjson0 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtOpenGL4 libQtSvg4 libQtXml4 libQtXmlPatterns4 libstdc++6 libtiff5 libxml2 libXrandr2 libxslt
+external-source: digikam
+sdesc: "KDE Image Plugin Interface (plugins)"
+ldesc: "Kipi plugins are additional functions for the KDE Images 
+Managment Host Programs. They can add extra menus and shortcuts, and 
+extend the host programs features. You can install as many or as few as 
+you like, from within host programs."

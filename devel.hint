@@ -1,8 +1,0 @@
-category: Graphics KDE
-requires: digikam libkdecore5-devel libkexiv2-devel liblcms-devel libQt3Support4-devel libQtCore4-devel libQtGui4-devel
-external-source: digikam
-sdesc: "KDE photo management application (plugin development files)"
-ldesc: "digiKam is an advanced digital photo management application for 
-KDE, which makes importing and organizing digital photos a 'snap'. The 
-photos are organized in albums which can be sorted chronologically, by 
-folder layout or by custom collections."
