@@ -1,0 +1,5 @@
+category: KDE
+requires: libkvkontake-common libgcc1 libkdecore5 libqjson0 libQtCore4 libQtGui4 libQtWebKit4 libstdc++6
+external-source: digikam
+sdesc: "KDE vkontakte.ru social network library (runtime)"
+ldesc: "KDE interface for the vkontakte.ru social network"

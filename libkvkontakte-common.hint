@@ -1,0 +1,5 @@
+category: KDE
+requires:
+external-source: digikam
+sdesc: "KDE vkontakte.ru social network library (data)"
+ldesc: "KDE interface for the vkontakte.ru social network"
