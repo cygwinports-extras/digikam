@@ -23,7 +23,7 @@ libkgeomap_devel_CONTENTS="usr/bin/libkgeomap_demo.exe usr/include/kde4/libkgeom
                            usr/lib/libkgeomap.dll.a usr/lib/pkgconfig/libkgeomap.pc
                            usr/share/kde4/apps/cmake/modules/FindKGeoMap.cmake"
 libkvkontakte1_CONTENTS="usr/bin/cygkvkontakte-1.dll"
-libkvkontakte_common_CONTENTS="usr/share/locale/*/*/libkvkontakte.mo"
+#libkvkontakte_common_CONTENTS="usr/share/locale/*/*/libkvkontakte.mo"
 libkvkontakte_devel_CONTENTS="usr/include/kde4/libkvkontakte/ usr/lib/libkvkontakte.dll.a
                               usr/lib/cmake/LibKVkontakte/"
 libmediawiki1_CONTENTS="usr/bin/cygmediawiki-1.dll"
