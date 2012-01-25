@@ -5,6 +5,8 @@ HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 PATCH_URI="2.1.1-as-needed.patch
+           2.5.0-boost148.patch
+           2.5.0-libkipi47.patch
            2.0.0-cygwin.patch"
 
 PKG_NAMES="${PN} kipi-plugins libkface1 libkface-common libkface-devel

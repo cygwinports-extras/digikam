@@ -9,8 +9,8 @@ usr/share/applications/kde4/showfoto.desktop
 usr/share/doc/HTML/en/digikam/
 usr/share/doc/HTML/en/showfoto/
 usr/share/doc/digikam/
-usr/share/icons/oxygen/*/apps/digikam.*
-usr/share/icons/oxygen/*/apps/showfoto.*
+usr/share/icons/hicolor/*/apps/digikam.*
+usr/share/icons/hicolor/*/apps/showfoto.*
 usr/share/kde4/apps/digikam/
 usr/share/kde4/apps/showfoto/
 usr/share/kde4/apps/solid/actions/digikam-opencamera.desktop
