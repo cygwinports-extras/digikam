@@ -1,6 +1,0 @@
-category: KDE
-requires: libgcc1 libkdecore5 libQtCore4 libQtNetwork4 libstdc++6
-external-source: digikam
-sdesc: "KDE MediaWiki web service library (runtime)"
-ldesc: "libmediawiki is a KDE C++ interface for MediaWiki based web service as
-wikipedia.org. This library is used by kipi-plugins and digiKam."

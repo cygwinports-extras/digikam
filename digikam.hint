@@ -1,7 +1,0 @@
-category: Graphics KDE
-requires: kipi-plugins libclapack3 libgcc1 libglib2.0_0 libgphoto2_2 libgphoto2_port0 libjasper1 libjpeg8 libkdcraw20 libkdecore5 libkexiv2_10 libkface1 libkgeomap1 libkipi8 liblcms1 liblensfun0 liblqr1_0 libpgf1 libphonon4 libpng14 libQt3Support4 libQtCore4 libQtDBus4 libQtGui4 libQtSql4 libQtXml4 libsoprano4 libstdc++6 libtiff5 libX11_6 kreadconfig perl sqlite3
-sdesc: "KDE photo management application"
-ldesc: "digiKam is an advanced digital photo management application for 
-KDE, which makes importing and organizing digital photos a 'snap'. The 
-photos are organized in albums which can be sorted chronologically, by 
-folder layout or by custom collections."

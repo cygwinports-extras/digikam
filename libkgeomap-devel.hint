@@ -1,6 +1,0 @@
-category: KDE
-requires: libkgeomap1 libkdecore-devel libQtCore4-devel libQtGui4-devel
-external-source: digikam
-sdesc: "KDE photo geotagging library (development)"
-ldesc: "Libkgeomap is a wrapper around world map components as Marble, 
-OpenstreetMap and GoogleMap, for browsing and arranging photos on a map."

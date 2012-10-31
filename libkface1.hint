@@ -1,6 +1,0 @@
-category: Graphics KDE
-requires: libkface-common libgcc1 libkdecore5 libopencv2.3 libQtCore4 libQtGui4 libstdc++6
-external-source: digikam
-sdesc: "KDE face recognition library (runtime)"
-ldesc: "Libkface is a Qt/C++ wrapper around LibFace library to perform face
-recognition and detection over pictures."

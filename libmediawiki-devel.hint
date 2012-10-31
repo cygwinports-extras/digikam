@@ -1,6 +1,0 @@
-category: KDE
-requires: libmediawiki1 libkdecore-devel libQtCore4-devel libQtNetwork4-devel
-external-source: digikam
-sdesc: "KDE MediaWiki web service library (development)"
-ldesc: "libmediawiki is a KDE C++ interface for MediaWiki based web service as
-wikipedia.org. This library is used by kipi-plugins and digiKam."
