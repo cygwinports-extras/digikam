@@ -1,25 +1,27 @@
 inherit kde4
 
 NAME="digikam"
-VERSION=2.9.0
+VERSION=3.3.0
 RELEASE=1
-CATEGORY="Graphics KDE"
+CATEGORY="Graphics"
 SUMMARY="KDE photo management application"
 DESCRIPTION="digiKam is an advanced digital photo management application for
 KDE, which makes importing and organizing digital photos a 'snap'. The photos
 are organized in albums which can be sorted chronologically, by folder layout
 or by custom collections."
 HOMEPAGE="http://www.digikam.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://kde/stable/digikam/digikam-${VERSION}.tar.bz2"
+PATCH_URI="
+	3.3.0-as-needed.patch
+	3.3.0-cygwin.patch
+	3.3.0-includedir.patch
+"
 
-PATCH_URI="2.1.1-as-needed.patch
-           2.0.0-cygwin.patch"
-
-PKG_NAMES="${PN} kipi-plugins libkface1 libkface-common libkface-devel
+PKG_NAMES="${NAME} kipi-plugins libkface2 libkface-common libkface-devel
            libkgeomap1 libkgeomap-common libkgeomap-devel
            libkvkontakte1 libkvkontakte-common libkvkontakte-devel
            libmediawiki1 libmediawiki-devel"
-digikam_REQUIRES="kreadconfig sqlite3"
+digikam_REQUIRES="kreadconfig mysql mysqld sqlite3"
 digikam_CONTENTS="etc/postinstall/ usr/bin/*digikam* usr/bin/digitaglinktree
 	usr/bin/showfoto.exe usr/lib/kde4/*digikam* usr/lib/kde4/libexec/digikam*
 	usr/share/applications/kde4/digikam.desktop usr/share/applications/kde4/showfoto.desktop
@@ -37,27 +39,34 @@ kipi_plugins_DESCRIPTION="Kipi plugins are additional functions for the KDE Imag
 Managment Host Programs. They can add extra menus and shortcuts, and extend
 the host programs features. You can install as many or as few as you like,
 from within host programs."
-kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-2.dll usr/bin/dngconverter.exe
+kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-3.dll usr/bin/dngconverter.exe
 	usr/bin/dnginfo.exe usr/bin/expoblending.exe
-	usr/bin/photolayoutseditor.exe usr/lib/kde4/kipiplugin_*
+	usr/bin/photolayoutseditor.exe usr/bin/panoramagui.exe
+	usr/lib/kde4/kipiplugin_*
 	usr/share/applications/kde4/dngconverter.desktop
 	usr/share/applications/kde4/expoblending.desktop
 	usr/share/applications/kde4/kipiplugins.desktop
+	usr/share/applications/kde4/panoramagui.desktop
 	usr/share/applications/kde4/photolayoutseditor.desktop
-	usr/share/doc/HTML/en/kipi-plugins/ usr/share/icons/hicolor/*/actions/
-	usr/share/icons/hicolor/*/apps/dngconverter.*
+	usr/share/doc/HTML/en/kipi-plugins/
+	usr/share/icons/hicolor/*/actions/
+	usr/share/icons/hicolor/*/apps/kipi-*.*
 	usr/share/icons/hicolor/*/apps/photolayoutseditor.*
 	usr/share/icons/oxygen/*/apps/*converter.*
-	usr/share/kde4/apps/gpssync/ usr/share/kde4/apps/kipi/
-	usr/share/kde4/apps/kipiplugin* usr/share/kde4/apps/photolayoutseditor/
-	usr/share/kde4/config.kcfg/PLEConfigSkeleton.kcfgc
+	usr/share/kde4/apps/gpssync/
+	usr/share/kde4/apps/kipi/
+	usr/share/kde4/apps/kipiplugin*
+	usr/share/kde4/apps/photolayoutseditor/
+	usr/share/kde4/config.kcfg/photolayoutseditor.kcfg
 	usr/share/kde4/services/kipiplugin*
 	usr/share/kde4/servicetypes/photolayoutseditor*plugin.desktop
 	usr/share/locale/*/LC_MESSAGES/kipiplugin*
-	usr/share/templates/kipiplugins_photolayoutseditor/"
-libkface1_SUMMARY="KDE face recognition library (runtime)"
-libkface1_REQUIRES="libkface-common"
-libkface1_CONTENTS="usr/bin/cygkface-1.dll"
+	usr/share/locale/*/LC_MESSAGES/libkipi.mo
+	usr/share/templates/kipiplugins_photolayoutseditor/
+"
+libkface2_SUMMARY="KDE face recognition library (runtime)"
+libkface2_REQUIRES="libkface-common"
+libkface2_CONTENTS="usr/bin/cygkface-2.dll"
 libkface_common_SUMMARY="KDE face recognition library (data)"
 libkface_common_CONTENTS="usr/share/kde4/apps/libkface/"
 libkface_devel_SUMMARY="KDE face recognition library (development)"
@@ -95,7 +104,7 @@ PKG_IGNORE="usr/lib/libdigikam* usr/lib/libkipiplugins.*"
 
 # Boost: kipi-plugins/panorama ICE with gcc-4.5 and boost-1.48
 CYGCMAKE_ARGS="
-	-DWITH_Boost=OFF
 	-DPGF_INCLUDE_DIRS=/usr/include/libpgf
-	-DOpenCV_DIR=/usr/share/opencv
+	-DINITCMD_MYSQL=/usr/bin/mysql_install_db
+	-DSERVERCMD_MYSQL=/usr/sbin/mysqld
 "

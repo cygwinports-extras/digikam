@@ -1,0 +1,83 @@
+--- origsrc/digikam-3.3.0/core/digikam/CMakeLists.txt	2013-08-04 17:40:53.000000000 -0500
++++ src/digikam-3.3.0/core/digikam/CMakeLists.txt	2013-09-03 23:30:43.599408700 -0500
+@@ -266,6 +266,12 @@ KDE4_ADD_APP_ICON(digikam_SRCS "../data/
+ KDE4_ADD_EXECUTABLE(digikam ${digikam_SRCS})
+ 
+ TARGET_LINK_LIBRARIES(digikam
++        advancedrename
++        queuemanager
++        importui
++        digikamdatabase
++        digikamcore
++
+         ${QT_QTSQL_LIBRARY}
+         ${QT_QT3SUPPORT_LIBRARY}
+         ${QT_QTTEST_LIBRARY}
+@@ -286,13 +292,6 @@ TARGET_LINK_LIBRARIES(digikam
+ 
+         ${STRIGI_LIBRARIES}
+         ${LCMS_LIBRARIES}
+-
+-        digikamcore
+-        digikamdatabase
+-        advancedrename
+-        queuemanager
+-
+-        importui
+         
+         ${OpenCV_LIBRARIES}
+         
+--- origsrc/digikam-3.3.0/extra/kipi-plugins/dlnaexport/CMakeLists.txt	2013-08-04 17:40:18.000000000 -0500
++++ src/digikam-3.3.0/extra/kipi-plugins/dlnaexport/CMakeLists.txt	2013-09-08 06:33:24.389077600 -0500
+@@ -29,17 +29,6 @@ SET(kipiplugin_dlnaexport_PART_SRCS
+ 
+ KDE4_ADD_PLUGIN(kipiplugin_dlnaexport ${kipiplugin_dlnaexport_PART_SRCS})
+ 
+-TARGET_LINK_LIBRARIES(kipiplugin_dlnaexport
+-                      ${KDCRAW_LIBRARIES}
+-                      ${KIPI_LIBRARIES}
+-                      ${KEXIV2_LIBRARIES}
+-                      ${KDE4_KDEUI_LIBS}
+-                      ${KDE4_KIO_LIBS}
+-                      ${QT_LIBRARIES}
+-                      ${QT_QTXMLPATTERNS_LIBRARY}
+-                      kipiplugins
+-                     )
+-
+ IF(HUPNP_FOUND AND HUPNPAV_FOUND)
+     TARGET_LINK_LIBRARIES(kipiplugin_dlnaexport
+                           ${HUPNP_LIBS}
+@@ -55,6 +44,17 @@ ELSE(HUPNP_FOUND AND HUPNPAV_FOUND)
+ 
+ ENDIF(HUPNP_FOUND AND HUPNPAV_FOUND)
+ 
++TARGET_LINK_LIBRARIES(kipiplugin_dlnaexport
++                      ${KDCRAW_LIBRARIES}
++                      ${KIPI_LIBRARIES}
++                      ${KEXIV2_LIBRARIES}
++                      ${KDE4_KDEUI_LIBS}
++                      ${KDE4_KIO_LIBS}
++                      ${QT_LIBRARIES}
++                      ${QT_QTXMLPATTERNS_LIBRARY}
++                      kipiplugins
++                     )
++
+ CONFIGURE_FILE(kipiplugin_dlnaexport.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kipiplugin_dlnaexport.desktop)
+ 
+ INSTALL(FILES   ${CMAKE_CURRENT_BINARY_DIR}/kipiplugin_dlnaexport.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+--- origsrc/digikam-3.3.0/extra/libkface/libkface/CMakeLists.txt	2013-08-04 17:40:23.000000000 -0500
++++ src/digikam-3.3.0/extra/libkface/libkface/CMakeLists.txt	2013-09-08 05:18:13.041043300 -0500
+@@ -69,11 +69,11 @@ TARGET_LINK_LIBRARIES(kface ${KDE4_KDECO
+                             ${QT_QTGUI_LIBRARY}
+                             ${QT_QTXML_LIBRARY}
+                             ${LIBFACE_LIBRARIES}
++                            opentld
++                            cvblobs
+                             ${OpenCV_LIBRARIES}
+ 
+                             ${QT_QTSQL_LIBRARY}
+-                            opentld
+-                            cvblobs
+                       )
+ 
+ SET_TARGET_PROPERTIES(kface PROPERTIES VERSION ${KFACE_LIB_SO_VERSION_STRING}

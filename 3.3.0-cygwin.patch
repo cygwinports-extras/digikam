@@ -1,0 +1,48 @@
+--- origsrc/digikam-3.3.0/core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	2013-08-04 17:40:28.000000000 -0500
++++ src/digikam-3.3.0/core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	2013-09-03 23:29:35.589518700 -0500
+@@ -55,7 +55,7 @@ static int fillMemoryInfo(Digikam::KMemo
+ #include <unistd.h>
+ #include <kstat.h>
+ #endif
+-#if defined(Q_OS_LINUX)// || defined(Q_OS_CYGWIN)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+ #include <stdio.h>
+ #include <string.h>
+ #endif
+@@ -86,7 +86,7 @@ static int fillMemoryInfo(Digikam::KMemo
+ #endif
+ 
+ 
+-#if defined(Q_OS_LINUX)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+ char* sg_f_read_line(FILE* f, const char* string)
+ {
+     /* Max line length. 8k should be more than enough */
+@@ -517,7 +517,7 @@ int get_mem_stats(Digikam::KMemoryInfo::
+ #include <sys/swap.h>
+ #include <unistd.h>
+ #endif
+-#if defined(Q_OS_LINUX) //|| defined(Q_OS_CYGWIN)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+ #include <stdio.h>
+ #include <string.h>
+ #endif
+@@ -562,7 +562,7 @@ int get_swap_stats(Digikam::KMemoryInfo:
+     int             pagesize;
+ #endif // Q_OS_SOLARIS
+ 
+-#if defined(Q_OS_LINUX) //|| defined(Q_OS_CYGWIN)
++#if defined(Q_OS_LINUX) || defined(Q_OS_CYGWIN)
+     FILE*              f        = 0;
+     char*              line_ptr = 0;
+     unsigned long long value;
+--- origsrc/digikam-3.3.0/extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp	2013-08-04 17:40:18.000000000 -0500
++++ src/digikam-3.3.0/extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp	2013-09-08 02:18:31.380367500 -0500
+@@ -29,6 +29,7 @@
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #else
++#include <sys/socket.h>
+ #include <arpa/inet.h>
+ #endif
+ 

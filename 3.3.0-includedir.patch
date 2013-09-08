@@ -1,0 +1,12 @@
+--- origsrc/digikam-3.3.0/extra/libkvkontakte/CMakeLists.txt	2013-08-04 17:40:15.000000000 -0500
++++ src/digikam-3.3.0/extra/libkvkontakte/CMakeLists.txt	2013-09-08 13:18:51.778524700 -0500
+@@ -16,9 +16,6 @@ if(NOT LIB_INSTALL_DIR)
+ endif(NOT LIB_INSTALL_DIR)
+ set(CMAKECONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/LibKVkontakte )
+ 
+-# Use a versioned install directory for the headers so multiple versions can be installed in parallel
+-set(INCLUDE_INSTALL_DIR include )
+-
+ 
+ # === Closer to the code, close to the body ===
+ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
