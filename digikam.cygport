@@ -2,7 +2,7 @@ inherit kde4
 
 NAME="digikam"
 VERSION=3.5.0
-RELEASE=2
+RELEASE=3
 CATEGORY="Graphics"
 SUMMARY="KDE photo management application"
 DESCRIPTION="digiKam is an advanced digital photo management application for
