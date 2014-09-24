@@ -1,8 +1,8 @@
 inherit kde4
 
 NAME="digikam"
-VERSION=3.5.0
-RELEASE=3
+VERSION=4.3.0
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE photo management application"
 DESCRIPTION="digiKam is an advanced digital photo management application for
@@ -12,7 +12,7 @@ or by custom collections."
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://kde/stable/digikam/digikam-${VERSION}.tar.bz2"
 PATCH_URI="
-	3.3.0-as-needed.patch
+	4.3.0-as-needed.patch
 	3.3.0-cygwin.patch
 	3.3.0-includedir.patch
 "
@@ -24,6 +24,7 @@ PKG_NAMES="${NAME} kipi-plugins libkface2 libkface-common libkface-devel
 digikam_REQUIRES="kipi-plugins kreadconfig mysql mysqld sqlite3"
 digikam_CONTENTS="etc/postinstall/ usr/bin/*digikam* usr/bin/digitaglinktree
 	usr/bin/showfoto.exe usr/lib/kde4/*digikam* usr/lib/kde4/libexec/digikam*
+	usr/share/appdata/
 	usr/share/applications/kde4/digikam.desktop usr/share/applications/kde4/showfoto.desktop
 	usr/share/doc/HTML/en/digikam/ usr/share/doc/HTML/en/showfoto/
 	usr/share/doc/digikam/ usr/share/icons/hicolor/*/apps/digikam.*
@@ -39,7 +40,7 @@ kipi_plugins_DESCRIPTION="Kipi plugins are additional functions for the KDE Imag
 Managment Host Programs. They can add extra menus and shortcuts, and extend
 the host programs features. You can install as many or as few as you like,
 from within host programs."
-kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-3.dll usr/bin/dngconverter.exe
+kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-*.dll usr/bin/dngconverter.exe
 	usr/bin/dnginfo.exe usr/bin/expoblending.exe
 	usr/bin/photolayoutseditor.exe usr/bin/panoramagui.exe
 	usr/lib/kde4/kipiplugin_*
