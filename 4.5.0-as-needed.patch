@@ -1,0 +1,66 @@
+--- origsrc/digikam-4.5.0/core/app/CMakeLists.txt	2014-11-12 04:52:48.000000000 -0600
++++ src/digikam-4.5.0/core/app/CMakeLists.txt	2014-11-21 15:24:57.822813700 -0600
+@@ -245,6 +245,12 @@ set_target_properties(digikam PROPERTIES
+ 
+ 
+ target_link_libraries(digikam
++                      advancedrename
++                      queuemanager
++                      importui
++                      digikamdatabase
++                      digikamcore
++
+                       ${QT_QTSQL_LIBRARY}
+                       ${QT_QTTEST_LIBRARY}
+ 
+@@ -261,12 +267,6 @@ target_link_libraries(digikam
+ 
+                       ${LCMS_LIBRARIES}
+ 
+-                      digikamcore
+-                      digikamdatabase
+-                      advancedrename
+-                      queuemanager
+-                      importui
+-
+                       ${OpenCV_LIBRARIES}
+                      )
+ 
+--- origsrc/digikam-4.5.0/extra/kipi-plugins/dlnaexport/CMakeLists.txt	2014-11-12 04:53:14.000000000 -0600
++++ src/digikam-4.5.0/extra/kipi-plugins/dlnaexport/CMakeLists.txt	2014-11-21 15:25:38.821019800 -0600
+@@ -35,17 +35,6 @@ set(kipiplugin_dlnaexport_PART_SRCS
+ 
+ KDE4_ADD_PLUGIN(kipiplugin_dlnaexport ${kipiplugin_dlnaexport_PART_SRCS})
+ 
+-target_link_libraries(kipiplugin_dlnaexport
+-                      ${KDCRAW_LIBRARIES}
+-                      ${KIPI_LIBRARIES}
+-                      ${KEXIV2_LIBRARIES}
+-                      ${KDE4_KDEUI_LIBS}
+-                      ${KDE4_KIO_LIBS}
+-                      ${QT_LIBRARIES}
+-                      ${QT_QTXMLPATTERNS_LIBRARY}
+-                      kipiplugins
+-                     )
+-
+ if(HUPNP_FOUND AND HUPNPAV_FOUND)
+ 
+     target_link_libraries(kipiplugin_dlnaexport
+@@ -62,6 +51,17 @@ elseif(NOT (HUPNP_FOUND AND HUPNPAV_FOUN
+ 
+ endif()
+ 
++target_link_libraries(kipiplugin_dlnaexport
++                      ${KDCRAW_LIBRARIES}
++                      ${KIPI_LIBRARIES}
++                      ${KEXIV2_LIBRARIES}
++                      ${KDE4_KDEUI_LIBS}
++                      ${KDE4_KIO_LIBS}
++                      ${QT_LIBRARIES}
++                      ${QT_QTXMLPATTERNS_LIBRARY}
++                      kipiplugins
++                     )
++
+ configure_file(kipiplugin_dlnaexport.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/kipiplugin_dlnaexport.desktop)
+ 
+ install(FILES   ${CMAKE_CURRENT_BINARY_DIR}/kipiplugin_dlnaexport.desktop DESTINATION ${SERVICES_INSTALL_DIR})

@@ -1,7 +1,7 @@
 inherit kde4
 
 NAME="digikam"
-VERSION=4.3.0
+VERSION=4.5.0
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE photo management application"
@@ -12,13 +12,14 @@ or by custom collections."
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://kde/stable/digikam/digikam-${VERSION}.tar.bz2"
 PATCH_URI="
-	4.3.0-as-needed.patch
+	http://pkgs.fedoraproject.org/cgit/digikam.git/plain/digikam-4.5.0-enable-libs.patch
+	4.5.0-as-needed.patch
 	3.3.0-cygwin.patch
 	3.3.0-includedir.patch
 "
 
-PKG_NAMES="${NAME} kipi-plugins libkface2 libkface-common libkface-devel
-           libkgeomap1 libkgeomap-common libkgeomap-devel
+PKG_NAMES="${NAME} kipi-plugins libkface3 libkface-common libkface-devel
+           libkgeomap2 libkgeomap-common libkgeomap-devel
            libkvkontakte1 libkvkontakte-common libkvkontakte-devel
            libmediawiki1 libmediawiki-devel"
 digikam_REQUIRES="kipi-plugins kreadconfig mysql mysqld sqlite3"
@@ -65,19 +66,19 @@ kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-*.dll usr/bin/dngconverter.exe
 	usr/share/locale/*/LC_MESSAGES/libkipi.mo
 	usr/share/templates/kipiplugins_photolayoutseditor/
 "
-libkface2_SUMMARY="KDE face recognition library (runtime)"
-libkface2_REQUIRES="libkface-common"
-libkface2_CONTENTS="usr/bin/cygkface-2.dll"
+libkface3_SUMMARY="KDE face recognition library (runtime)"
+libkface3_REQUIRES="libkface-common"
+libkface3_CONTENTS="usr/bin/cygkface-3.dll"
 libkface_common_SUMMARY="KDE face recognition library (data)"
 libkface_common_CONTENTS="usr/share/kde4/apps/libkface/"
 libkface_devel_SUMMARY="KDE face recognition library (development)"
 libkface_devel_REQUIRES="libkdecore-devel"
 libkface_devel_CONTENTS="usr/include/kde4/libkface/ usr/lib/libkface.dll.a
-                         usr/lib/pkgconfig/libkface.pc
-                         usr/share/kde4/apps/cmake/modules/FindKface.cmake"
-libkgeomap1_SUMMARY="KDE photo geotagging library (runtime)"
-libkgeomap1_REQUIRES="libkgeomap-common"
-libkgeomap1_CONTENTS="usr/bin/cygkgeomap-1.dll"
+                         usr/lib/cmake/Kface*/
+                         usr/lib/pkgconfig/libkface.pc"
+libkgeomap2_SUMMARY="KDE photo geotagging library (runtime)"
+libkgeomap2_REQUIRES="libkgeomap-common"
+libkgeomap2_CONTENTS="usr/bin/cygkgeomap-2.dll"
 libkgeomap_common_SUMMARY="KDE photo geotagging library (data)"
 libkgeomap_common_CONTENTS="usr/share/kde4/apps/libkgeomap/
                             usr/share/locale/*/*/libkgeomap.mo"
@@ -104,6 +105,7 @@ libmediawiki_devel_CONTENTS="usr/include/kde4/libmediawiki/ usr/lib/libmediawiki
 PKG_IGNORE="usr/lib/libdigikam* usr/lib/libkipiplugins.*"
 
 CYGCMAKE_ARGS="
+	-DENABLE_LCMS2=ON
 	-DPGF_INCLUDE_DIRS=/usr/include/libpgf
 	-DINITCMD_MYSQL=/usr/bin/mysql_install_db
 	-DSERVERCMD_MYSQL=/usr/sbin/mysqld
