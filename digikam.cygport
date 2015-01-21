@@ -1,7 +1,7 @@
 inherit kde4
 
 NAME="digikam"
-VERSION=4.5.0
+VERSION=4.6.0
 RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="KDE photo management application"
@@ -12,19 +12,18 @@ or by custom collections."
 HOMEPAGE="http://www.digikam.org/"
 SRC_URI="mirror://kde/stable/digikam/digikam-${VERSION}.tar.bz2"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/digikam.git/plain/digikam-4.5.0-enable-libs.patch
 	4.5.0-as-needed.patch
 	3.3.0-cygwin.patch
 	3.3.0-includedir.patch
 "
 
-PKG_NAMES="${NAME} kipi-plugins libkface3 libkface-common libkface-devel
-           libkgeomap2 libkgeomap-common libkgeomap-devel
-           libkvkontakte1 libkvkontakte-common libkvkontakte-devel
-           libmediawiki1 libmediawiki-devel"
+PKG_NAMES="${NAME} kipi-plugins libkface3 libkface-common
+           libkgeomap2 libkgeomap-common
+           libkvkontakte1 libkvkontakte-common
+           libmediawiki1"
 digikam_REQUIRES="kipi-plugins kreadconfig mysql mysqld sqlite3"
 digikam_CONTENTS="etc/postinstall/ usr/bin/*digikam* usr/bin/digitaglinktree
-	usr/bin/showfoto.exe usr/lib/kde4/*digikam* usr/lib/kde4/libexec/digikam*
+	usr/bin/showfoto.exe usr/lib/kde4/*digikam*
 	usr/share/appdata/
 	usr/share/applications/kde4/digikam.desktop usr/share/applications/kde4/showfoto.desktop
 	usr/share/doc/HTML/en/digikam/ usr/share/doc/HTML/en/showfoto/
@@ -67,6 +66,7 @@ kipi_plugins_CONTENTS="usr/bin/cygkipiplugins-*.dll usr/bin/dngconverter.exe
 	usr/share/templates/kipiplugins_photolayoutseditor/
 "
 libkface3_SUMMARY="KDE face recognition library (runtime)"
+libkface3_OBSOLETES="libkface-devel"
 libkface3_REQUIRES="libkface-common"
 libkface3_CONTENTS="usr/bin/cygkface-3.dll"
 libkface_common_SUMMARY="KDE face recognition library (data)"
@@ -77,6 +77,7 @@ libkface_devel_CONTENTS="usr/include/kde4/libkface/ usr/lib/libkface.dll.a
                          usr/lib/cmake/Kface*/
                          usr/lib/pkgconfig/libkface.pc"
 libkgeomap2_SUMMARY="KDE photo geotagging library (runtime)"
+libkgeomap2_OBSOLETES="libkgeomap-devel"
 libkgeomap2_REQUIRES="libkgeomap-common"
 libkgeomap2_CONTENTS="usr/bin/cygkgeomap-2.dll"
 libkgeomap_common_SUMMARY="KDE photo geotagging library (data)"
@@ -88,6 +89,7 @@ libkgeomap_devel_CONTENTS="usr/include/kde4/libkgeomap/
                            usr/lib/libkgeomap.dll.a usr/lib/pkgconfig/libkgeomap.pc
                            usr/share/kde4/apps/cmake/modules/FindKGeoMap.cmake"
 libkvkontakte1_SUMMARY="KDE vkontakte.ru social network library (runtime)"
+libkvkontakte1_OBSOLETES="libkvkontakte-devel"
 libkvkontakte1_CONTENTS="usr/bin/cygkvkontakte-1.dll"
 #libkvkontakte_common_CONTENTS="usr/share/locale/*/*/libkvkontakte.mo"
 libkvkontakte_devel_SUMMARY="KDE vkontakte.ru social network library (development)"
@@ -95,6 +97,7 @@ libkvkontakte_devel_REQUIRES="libkdecore-devel"
 libkvkontakte_devel_CONTENTS="usr/include/kde4/libkvkontakte/ usr/lib/libkvkontakte.dll.a
                               usr/lib/cmake/LibKVkontakte/"
 libmediawiki1_SUMMARY="KDE MediaWiki web service library (runtime)"
+libmediawiki1_OBSOLETES="libmediawiki-devel"
 libmediawiki1_CONTENTS="usr/bin/cygmediawiki-1.dll"
 libmediawiki_devel_SUMMARY="KDE MediaWiki web service library (development)"
 libmediawiki_devel_REQUIRES="libkdecore-devel"
@@ -102,10 +105,14 @@ libmediawiki_devel_CONTENTS="usr/include/kde4/libmediawiki/ usr/lib/libmediawiki
                              usr/lib/pkgconfig/libmediawiki.pc
                              usr/share/kde4/apps/cmake/modules/FindMediawiki.cmake"
 # private libraries
-PKG_IGNORE="usr/lib/libdigikam* usr/lib/libkipiplugins.*"
+PKG_IGNORE=" usr/lib/cmake/ usr/lib/lib*.dll.a"
 
 CYGCMAKE_ARGS="
 	-DENABLE_LCMS2=ON
+	-DDIGIKAMSC_COMPILE_LIBKFACE=ON
+	-DDIGIKAMSC_COMPILE_LIBKGEOMAP=ON
+	-DDIGIKAMSC_COMPILE_LIBMEDIAWIKI=ON
+	-DDIGIKAMSC_COMPILE_LIBKVKONTAKTE=ON
 	-DPGF_INCLUDE_DIRS=/usr/include/libpgf
 	-DINITCMD_MYSQL=/usr/bin/mysql_install_db
 	-DSERVERCMD_MYSQL=/usr/sbin/mysqld
